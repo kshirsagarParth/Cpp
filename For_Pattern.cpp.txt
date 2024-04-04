@@ -1,0 +1,45 @@
+#include <iostream> // Include the input/output stream library
+using namespace std; // Using standard namespace
+
+int main() // Main function where the execution of the program starts
+{
+    int i, j, r; // Declare integer variables i, j, and r
+
+    // Display message asking for input
+    cout << "\n\n Display the pattern like a diamond:\n";
+    cout << "----------------------------------------\n";
+    cout << " Input number of rows (half of the diamond): ";
+    cin >> r; // Read input for the number of rows (half of the diamond) from the user
+
+    // Loop to print the upper half of the diamond pattern
+    for (i = 0; i <= r; i++) // Loop for the upper half of the diamond
+    {
+        for (j = 1; j <= r - i; j++) // Loop to print spaces before the asterisks
+        {
+            cout << " "; // Print a space
+        }
+
+        for (j = 1; j <= 2 * i - 1; j++) // Loop to print asterisks in each row
+        {
+            cout << "*"; // Print an asterisk
+        }
+
+        cout << endl; // Move to the next line after each row is printed
+    }
+
+    // Loop to print the lower half of the diamond pattern
+    for (i = r - 1; i >= 1; i--) // Loop for the lower half of the diamond
+    {
+        for (j = 1; j <= r - i; j++) // Loop to print spaces before the asterisks
+        {
+            cout << " "; // Print a space
+        }
+
+        for (j = 1; j <= 2 * i - 1; j++) // Loop to print asterisks in each row
+        {
+            cout << "*"; // Print an asterisk
+        }
+
+        cout << endl; // Move to the next line after each row is printed
+    }
+}
