@@ -1,0 +1,80 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class complex
+{
+    float rl,imgi;
+    complex();
+    void getval();
+    complex operator +(complex ob);
+    complex operator -(complex ob);
+    void operator ++();
+    void operator ++(int);
+    complex operator --();
+}
+void complex::getvalue()
+{
+ cout<<"Enter the two values of two complex no."<<endl;
+ cin>>rl>>imgi;
+
+}
+void complex::operator ++()
+{
+    ++rl;
+    ++imgi;
+}
+void complex::operator ++(int)
+{
+    rl++;
+    imgi++;
+}
+complex complex:: operator +(complex ob)
+{
+    complex t;
+    t.rl=rl+ob.rl 
+    t.imgi=imgi+ob.imgi;
+    return(t);
+}
+complex complex:: operator -(complex ob)
+{
+    complex t;
+    t.rl=rl-ob.rl 
+    t.imgi=imgi-ob.imgi;
+    return(t);
+}
+void complex::operator --()
+{
+    rl--;
+    imgi--;
+}
+void complex :: display()
+{
+    cout <<rl<<"+"<<imgi<<"i"<<endl;
+    
+}
+
+int main() {
+complex obj1,obj2,ans1,ans2;
+ obj1.getval();
+ obj2.getval();
+cout<<"Input Values: "<<endl;
+obj1.display();
+obj2.display();
+ans1=obj1+obj2;
+ans2=obj1-obj2;
+cout<<"Result = "<<endl;
+ans1.display();
+ans2.display();
+++obj1;
+obj2++;
+cout<<"After Increment:"<<endl;
+obj1.display();
+obj2.display();
+obj1--;
+obj2--;
+cout<<"After Decrement: "<<endl;
+obj1.display();
+obj2.display();
+return 0;
+}
