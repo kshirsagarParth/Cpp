@@ -5,19 +5,21 @@ using namespace std;
 class complex
 {
     float rl,imgi;
+ public:  
     complex();
     void getval();
     complex operator +(complex ob);
     complex operator -(complex ob);
     void operator ++();
     void operator ++(int);
-    complex operator --();
-}
-void complex::getvalue()
+    void operator -();
+    void display();
+};
+
+void complex :: getval()
 {
  cout<<"Enter the two values of two complex no."<<endl;
  cin>>rl>>imgi;
-
 }
 void complex::operator ++()
 {
@@ -32,21 +34,21 @@ void complex::operator ++(int)
 complex complex:: operator +(complex ob)
 {
     complex t;
-    t.rl=rl+ob.rl 
+    t.rl=rl+ob.rl ;
     t.imgi=imgi+ob.imgi;
     return(t);
 }
 complex complex:: operator -(complex ob)
 {
     complex t;
-    t.rl=rl-ob.rl 
+    t.rl=rl-ob.rl ;
     t.imgi=imgi-ob.imgi;
     return(t);
 }
-void complex::operator --()
-{
-    rl--;
-    imgi--;
+void complex :: operator -()
+{ 
+    rl=-rl;
+    imgi=-imgi;
 }
 void complex :: display()
 {
@@ -71,10 +73,10 @@ obj2++;
 cout<<"After Increment:"<<endl;
 obj1.display();
 obj2.display();
-obj1--;
-obj2--;
-cout<<"After Decrement: "<<endl;
+-obj1;
+-obj2;
+cout<<"After negation: "<<endl;
 obj1.display();
 obj2.display();
 return 0;
-}
+}   
